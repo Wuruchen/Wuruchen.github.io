@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="TW">
+<head>
+  <title>My Website</title>
+  <style type="text/css">
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+    
+    .wrapper {
+        display: flex;
+        height: 100vh;
+        display: flex;
+      }
+      
+      .left-column {
+        width: 25%;
+        background-color:grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden
+      }
+      
+      .middle-column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden
+      }
+      
+      .right-column {
+        width: 25%;
+        background-color: Orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden
+      }
+      
+  </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="left-column"><!-- 左邊欄位 -->
+            <img src="../static/10.jpg" style="width:60%;height:25vh;border:5px solid white;margin-bottom:20px;margin-top:-20%" >
+            <div style="margin-bottom:20px;width:60%;height:40vh;border-radius:20px/20px;background-color:Orange;display: flex;align-items: center;flex-direction: column;">
+                <div style="margin-bottom:20px;margin-top:20px;display:flex;align-items:center;justify-content:center;">
+                    <img src="../static/ruchen.jpg" style="width:50px;height:50px;" >
+                    <span style="margin-left:10px;">我是作者</span>
+                </div>
+                
+                <div style="font-size:12px;margin-bottom:20px">        
+                自我介紹欄<br>
+                &ensp;<br>
+                Lorem ipsum dolor sit amet, <br>
+                eleifend consequuntur eos te.<br>
+                Scripta liberavisse vis cu.<br>
+                Vel ea eros populo,<br>
+                in sed nemore meliore. <br>
+                Vim possim fierent aliquando ea,<br>
+                ei laudem philosophia nec.<br>
+                Mei cibo voluptatum ea,<br>
+                ut eos fugit mazim saepe.<br>
+                </div>
+            </div>
+            <div style="border-radius:10px/10px;background-color:white;width:60%;height:7%;display: flex;align-items: center;" onclick="redirectToIndex()">
+                &ensp;查看更多作者的資源&ensp;<img style="width:60px;height:20px" src="../static/20.jpg">
+            </div>
+        </div>
+
+        <div class="middle-column"><!-- 中間欄位 -->
+          <div style="width:70%;height:100vh;">
+            <div style="display:flex;justify-content:space-between;width:100%">
+              <div style="margin-top:5%;font-size:20px"><b>巧克力爆漿熔岩蛋糕</b></div>
+              <div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;height:30px;margin-top:5%">&ensp;15&ensp;</div>
+              <img src="../static/18.jpg" style="width:100px;height:30px;margin-top:5%">
+            </div>
+            <div style="display:flex;justify-content:space-between;width:100%;margin-top:2%">
+              <div style="margin-top:5%">
+                <b>預備食材<br></b>
+                15 分鐘<br>
+                2 人份<br>
+                黑巧克力 60 克<br>
+                食用油 35 克<br>
+                雞蛋 2 個<br>
+                糖 30 克<br>
+                低筋麵粉 25 克
+              </div>
+              <img src="../static/10.jpg" style="width:180px;height:180px;margin-top:2%">
+            </div>
+
+            <div style="margin-top:3%;font-size:13px">
+              <p style="font-size:16px"><b>詳細步驟</b><p>
+              &ensp;<br>
+              1. 在烤盅內塗上模型奶油，並且均勻撒上巧克力粉，可用麵粉代替，    
+                拍掉多餘的粉類後，放入冰箱冷藏備用。<br>
+              &ensp;<br>
+              2. 將巧克力片切成小塊，方便融化。<br>
+              &ensp;<br>
+              3. 把切片巧克力和無鹽奶油放入耐熱容器隔水加熱，等到大部分都融化
+                之後，離火以餘溫至完全融化。<br>
+              &ensp;<br>
+              4. 拿出另一個容器跟打蛋器，將室溫雞蛋、細砂糖打成呈現乳白色澤。 <br>
+              &ensp;<br>
+              5. 將融化的巧克力奶油分批緩緩倒入蛋糊，同時一邊以打蛋器輕輕攪拌。<br>
+              &ensp;<br>
+              6. 把過篩麵粉的麵粉拌入放有雞蛋跟巧克力奶油的麵糊，輕盈地拌入
+                至沒有明顯乾粉。<br>
+              &ensp;<br>
+              7. 從冰箱取出烤盅，將巧克力麵糊倒入烤盅至七分滿，把整個容器放
+                檯面敲出麵糊的空氣。<br>
+              &ensp;<br>
+              9. 放回冰箱冷藏10分鐘後，烤箱預熱200度，送進烤箱烘烤15分鐘。<br>
+              &ensp;<br>
+              10. 取出後，讓法式巧克力熔岩蛋糕先放涼3分鐘，接著再倒扣在盤上。<br>
+              &ensp;<br>
+              11. 可以酌量撒上糖粉，加點新鮮水果或冰淇淋，法式經典甜點即完成。<br>
+              &ensp;<br>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="right-column"><!-- 右邊欄位 -->
+          <div style="margin-bottom:20px;width:80%;height:40vh;border-radius:10px/10px;background-color:white;display: flex;align-items: center;flex-direction: column;">
+            <div style="margin-bottom:20px;margin-top:20px;display:flex;align-items:center;justify-content:center;">
+                <span style="margin-left:10px;">給作者的留言</span>
+                <img src="../static/ruchen.jpg" style="width:40px;height:40px;" >
+                  </div>
+                  <div style="font-size:12px;margin-bottom:20px;margin-left:30px;margin-right:30px;">        
+                  Lorem ipsum dolor sit amet,
+                  eleifend consequuntur eos te.
+                  Scripta liberavisse vis cu. 
+                  Vel ea eros populo, in sed nemore meliore. 
+                  Vim possim fierent aliquando ea,
+                  ei laudem philosophia nec.
+                  </div>
+        </div>
+        <div style="border-radius:10px/10px;background-color:grey;width:70%;height:5%;display: flex;align-items: center;color:white;margin-top:30px">
+          &ensp;&ensp;收藏食譜&ensp;&ensp;
+        </div>
+        <div style="border-radius:10px/10px;background-color:grey;width:70%;height:5%;display: flex;align-items: center;color:white;margin-top:30px">
+          &ensp;&ensp;分享食譜&ensp;&ensp;
+      </div>
+      <div style="border-radius:10px/10px;background-color:grey;width:70%;height:5%;display: flex;align-items: center;color:white;margin-top:30px;">
+        &ensp;&ensp;列印食譜&ensp;&ensp;
+    </div>
+    <div style="display:flex;justify-content:space-between;width:70%;margin-top:100px">
+      <button style="width:100px;border-radius:5px/5px">返回首頁</button>
+      <button style="width:100px;border-radius:5px/5px">返回上一頁</button>
+    </div>
+
+      </div>
+      
+      <script>
+        function redirectToIndex() {
+          var url = "page4.html";
+          window.location.replace(url);
+        }
+        </script>
+</body>
+</html>

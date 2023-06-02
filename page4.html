@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-DLFJF7IBKVYz8w+7EBJeBWiFScD7Au1pspz7yW9XKjY3TR0ydCJl70EwK7V1v95Q" crossorigin="anonymous">
+    <style type="text/css">
+    
+          
+        html {height: 100%;}
+    *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    }
+    
+    .header {
+	background-color: #fff;
+	color: black;
+	padding: 10px;
+	text-align: center;
+	height: 15vh;
+	display: flex;
+	flex-direction: column;
+    white-space: nowrap
+    }
+
+    .tittle {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        background-color: #eedcdc;
+        overflow: hidden;
+        height: 85vh;
+        display: flex;
+      }
+      
+      .center {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        background-color: #808080;
+        height: 85vh;
+      }
+      
+      .right {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        background-color: #808080;
+        height: 85vh;
+        justify-content: center;
+      }
+      
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+
+
+    .tittle a {
+                display: block;
+                color: black;
+                padding: 16px;
+                text-decoration: none;
+                        }
+
+    .container {
+                width: 100%;
+                height: 90vh;
+                overflow-y: scroll;
+                white-space: nowrap; 
+                position: relative; 
+                cursor: default;
+                color:black;
+            }
+            
+        .container::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+            
+        .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: 85%;
+            height: 30vh;
+            background-color: white;
+            overflow: hidden;
+            overflow: auto; 
+            border-radius: 50px/50px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+        .item div {
+            width: 50%;
+            text-align: left;
+          }
+
+        .item img {
+            max-width: auto;
+            height: 28vh; 
+            display: block; 
+            margin-left: 10px;
+            margin-right: auto;
+            margin-top: 1%;
+            margin-bottom: auto;
+            border-radius: 50px/50px;
+          }
+          
+		
+		.item .caption {
+			margin-top: 10px;
+			font-size: 16px;
+			color: black;
+            background-color:white;
+            margin-left: 10px;
+		}
+
+        body {
+			margin: 0;
+			overflow: hidden;
+		}
+
+        .circle{
+            width:150px;
+            height:30px;  
+            background-color:black;
+            border-radius:30px/100px;
+            line-height:30px;
+            color:white
+        }
+
+        .search {
+            position: absolute;
+            top: 5%;
+            right: 40% ;
+            border: 2px solid black;
+            border-radius:5px/5px;
+          }
+
+        #popupButton {
+            cursor: pointer;
+        }
+        
+        #popup {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+        }
+
+  </style>
+          
+    
+</head>
+<body>
+
+    <div class="header"> <!-- 上方列 -->
+    <div style="max-width: 100%;height: auto;"><img src="../static/16.jpg" alt="Image test" style="max-width: 100%;max-height: 100px; ;float: left;"></div>
+    
+    <div class="search">  <!-- 搜尋窗 -->
+        <form style="display:flex;align-items:center">
+            <input type="text" style="width:500px;height:30px;border: none;outline: none;" placeholder="請輸入搜尋食譜...">
+            <img src= "../static/search.png" style="width:30px;height:30px;display: flex; align-items: center;margin-left:5px">
+        </form>
+        </div>
+    </div>
+
+    <img id="popupButton" src="../static/17.jpg" alt="Image test" style="max-width: 100%; max-height: 200px; position: absolute; top: 1%; right: 5%;width:90px;height:90px"> 
+
+    <div id="popup" style="display: none;background-color:rgba(128, 128, 128, 0.5)"> <!-- 右邊隱藏欄位 -->
+        <div style="display: flex; align-items: center; justify-content: center; height: 50%;">
+          <div style="text-align: center;">
+            <img src="../static/ruchen.jpg" style="width:50px;height:50px;">
+            <div style="color:white">
+                &ensp;<br>
+                首頁<br>
+                &ensp;<br>
+                搜尋食譜<br>
+                &ensp;<br>
+                分享食譜<br>
+                &ensp;<br>
+                開通會員<br>
+                &ensp;<br>
+                登出帳號<br></div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- 點擊圖片彈出窗口 -->
+    <script>
+        const popupButton = document.getElementById("popupButton");
+        const popup = document.getElementById("popup");
+        popupButton.addEventListener("click", function() {
+            popup.style.display = "block";
+            });
+    </script>
+
+    <div class="tittle" style="background-image: url(../static/4.jpg); background-size: cover;opacity: 0.5;color:black;"> <!-- 左邊欄位 -->
+        <div style="display: flex;align-items: center;flex-direction: column;width:100%;height:100vh;margin-top:30px">
+        <div><img src="../static/ruchen.jpg" style="width:50px;height:50px;"></div>
+        <div style="font-size:15px;margin-bottom:20px;background-color:Orange;width:80%;height:65vh;border-radius:15px/15px;margin-top:30px;padding-left:25px;padding-right:25px;padding-top:30px">        
+            <div>我是作者  &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img style="width:30px;height:30px;" src="../static/21.png"> 1156</div>
+            &ensp;<br>
+            自我介紹欄
+            Lorem ipsum dolor sit amet, <br>
+            eleifend consequuntur eos te.<br>
+            Scripta liberavisse vis cu.<br>
+            Vel ea eros populo,<br>
+            in sed nemore meliore. <br>
+            Vim possim fierent aliquando ea,<br>
+            ei laudem philosophia nec.<br>
+            Mei cibo voluptatum ea,<br>
+            ut eos fugit mazim saepe.<br>
+            <div style="width:100%;height:24vh;border-radius:15px/15px;margin-top:30px;background-color: white">
+            </div>
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="center"> <!-- 中間欄位 -->
+            <div class="container">
+            <div class="item"><img src="../static/10.jpg" alt="Image 1">
+            <table style=" width: 50%;text-align: left;height:25vh">
+                <tr><td><div>巧克力爆漿熔岩蛋糕</div></td></tr>
+                <tr><td><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;height:30px;width:35px; text-align: left;">&ensp;15&ensp;</div></td></tr>
+                <tr><td><img style="width:80px;height:25px;margin-left:-4px" src="../static/18.jpg"></td></tr>
+                <tr><td>
+                    <div style="display: flex; align-items: center;">
+                      <img style="width: 25px; height: 25px; margin-right: 5px;margin-left:-4px" src="../static/21.jpg">
+                      <span>9420</span>
+                    </div>
+                  </td></tr>
+            </table>
+            </div>
+
+            <div class="item"><img src="../static/9.jpg" alt="Image 2">
+                <table style=" width: 50%;text-align: left;height:25vh">
+                    <tr><td><div>女巫帽杯子蛋糕</div></td></tr>
+                    <tr><td><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;height:30px;width:35px; text-align: left;">&ensp;15&ensp;</div></td></tr>
+                    <tr><td><img style="width:80px;height:25px;margin-left:-4px" src="../static/19.jpg"></td></tr>
+                    <tr><td>
+                        <div style="display: flex; align-items: center;">
+                          <img style="width: 25px; height: 25px; margin-right: 5px;margin-left:-4px" src="../static/21.jpg">
+                          <span>520</span>
+                        </div>
+                      </td></tr>
+                </table></div>
+            <div class="item"><img src="../static/13.jpg" alt="Image 3">
+                <table style=" width: 50%;text-align: left;height:25vh">
+                    <tr><td><div>舒芙蕾鬆餅</div></td></tr>
+                    <tr><td><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;height:30px;width:35px; text-align: left;">&ensp;15&ensp;</div></td></tr>
+                    <tr><td><img style="width:80px;height:25px;margin-left:-4px" src="../static/18.jpg"></td></tr>
+                    <tr><td>
+                        <div style="display: flex; align-items: center;">
+                          <img style="width: 25px; height: 25px; margin-right: 5px;margin-left:-4px" src="../static/21.jpg">
+                          <span>1210</span>
+                        </div>
+                      </td></tr>
+                </table></div>
+            <div class="item"><img src="../static/14.jpg" alt="Image 4">
+                <table style=" width: 50%;text-align: left;height:25vh">
+                    <tr><td><div>低碳焦糖布丁</div></td></tr>
+                    <tr><td><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;height:30px;width:35px; text-align: left;">&ensp;15&ensp;</div></td></tr>
+                    <tr><td><img style="width:80px;height:25px;margin-left:-4px" src="../static/19.jpg"></td></tr>
+                    <tr><td>
+                        <div style="display: flex; align-items: center;">
+                          <img style="width: 25px; height: 25px; margin-right: 5px;margin-left:-4px" src="../static/21.jpg">
+                          <span>223</span>
+                        </div>
+                      </td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <script>
+            var center = document.querySelector('.container');
+
+            center.addEventListener('wheel', function(event) {
+              var delta = event.deltaY;
+              var currentScrollTop = center.scrollTop;
+              center.scrollTop += delta;
+              
+              // prevent body from scrolling when at top/bottom of center
+              if ((delta < 0 && currentScrollTop === 0) || 
+                  (delta > 0 && center.scrollHeight - center.scrollTop === center.clientHeight)) {
+                event.preventDefault();
+              }
+            });
+            
+        </script>
+        
+
+        <div class="right" style="font-size:20px;font-weight:bold;background-image: url(../static/3.jpg);background-size: cover;opacity: 0.5; justify-content: center;"> <!-- 右邊欄位 -->
+            <div style="display:flex;justify-content:space-between;width:70%;margin-top:100px;margin: 0 auto;">
+                <button style="width:100px;border-radius:5px/5px;;margin-top:230%">返回首頁</button>
+                <button style="width:100px;border-radius:5px/5px;;margin-top:230%">返回上一頁</button>
+            </div>
+        </div>
+        
+
+        
+    </div>
+
+</body>
+
+ </html>
