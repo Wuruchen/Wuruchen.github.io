@@ -5,36 +5,334 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-  <link rel="stylesheet" href="home.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,800display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-DLFJF7IBKVYz8w+7EBJeBWiFScD7Au1pspz7yW9XKjY3TR0ydCJl70EwK7V1v95Q" crossorigin="anonymous">
+    <style type="text/css">
+    
+          
+        html {height: 100%;}
+    *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    }
+    
+    .header {
+	background-color: #fff;
+	color: black;
+	padding: 10px;
+	text-align: center;
+	height: 15vh;
+	display: flex;
+	flex-direction: column;
+    white-space: nowrap
+    }
+
+    .tittle {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background-color: #eedcdc;
+    overflow: hidden;
+    height: 85vh;
+    display: flex;
+    }
+
+    .right {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    background-color: #808080;
+    height: 85vh;
+    } 
+
+    .tittle a {
+                display: block;
+                color: black;
+                padding: 16px;
+                text-decoration: none;
+                        }
+
+    .container {
+                width: 100%;
+                height: 90vh;
+                overflow-x: scroll;
+                white-space: nowrap; 
+                position: relative; 
+                cursor: default;
+                color:black
+            }
+            
+        .container::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+            
+	.item {
+		display: inline-block; 
+		width: 300px;
+		margin-right: 20px;
+		position: absolute; 
+        height:75vh;
+        background-color:white;
+        overflow: hidden;
+        overflow: auto; 
+        border-radius:10px/10px;   
+		}
+		
+		.item img {
+			max-width: 80%;
+			height: auto; 
+            display:block; margin:auto;
+            background-color:white;
+            margin-top: 10px;
+		}
+		
+		.item .caption {
+			margin-top: 10px;
+			font-size: 16px;
+			color: black;
+            background-color:white;
+            margin-left: 10px;
+		}
+
+        body {
+			margin: 0;
+			overflow: hidden;
+		}
+
+        .circle{
+            width:150px;
+            height:30px;  
+            background-color:black;
+            border-radius:30px/100px;
+            line-height:30px;
+            color:white
+        }
+
+        .search {
+            position: absolute;
+            top: 5%;
+            right: 40% ;
+            border: 2px solid black;
+            border-radius:5px/5px;
+          }
+
+        #popupButton {
+            cursor: pointer;
+        }
+        
+        #popup {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+        }
+
+  </style>
+          
+    
 </head>
 <body>
-	<div class="container">
-		<div class="left"></div>
-		<div class="middle">
-			<h1><I>TEATME DESSERT</I></h1>
-			<h7><I>Step-by-step recipes of delicious teatime dessert</I></h7>
-			<button onclick="redirectToIndex()">Log in</button>
-		</div>
-		<div class="right"></div>
-	</div>
-	<script>
-		function redirectToIndex() {
-		  var url = "index.html";
-		  window.location.replace(url);
-		}
-	  </script>
 
-	  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5GKQ907NB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <div class="header"> <!-- 上方列 -->
+    <div style="max-width: 100%;height: auto;"><img src="../static/16.jpg" alt="Image test" style="max-width: 100%;max-height: 100px; ;float: left;"></div>
+    
+    <div class="search">  <!-- 搜尋窗 -->
+        <form style="display:flex;align-items:center">
+            <input type="text" style="width:500px;height:30px;border: none;outline: none;" placeholder="請輸入搜尋食譜...">
+            <img src= "../static/search.png" style="width:30px;height:30px;display: flex; align-items: center;margin-left:5px">
+        </form>
+        </div>
+    </div>
 
-  gtag('config', 'G-Q5GKQ907NB');
-</script>
+    <img id="popupButton" src="../static/17.jpg" alt="Image test" style="max-width: 100%; max-height: 200px; position: absolute; top: 1%; right: 5%;width:90px;height:90px"> 
+
+    <div id="popup" style="display: none;background-color:rgba(128, 128, 128, 0.5)"> <!-- 右邊隱藏欄位 -->
+        <div style="display: flex; align-items: center; justify-content: center; height: 50%;">
+          <div style="text-align: center;">
+            <img src="../static/ruchen.jpg" style="width:50px;height:50px;">
+            <div style="color:white">
+                &ensp;<br>
+                首頁<br>
+                &ensp;<br>
+                搜尋食譜<br>
+                &ensp;<br>
+                分享食譜<br>
+                &ensp;<br>
+                開通會員<br>
+                &ensp;<br>
+                登出帳號<br></div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- 點擊圖片彈出窗口 -->
+    <script>
+        const popupButton = document.getElementById("popupButton");
+        const popup = document.getElementById("popup");
+        popupButton.addEventListener("click", function() {
+            popup.style.display = "block";
+            });
+    </script>
+
+    <div class="tittle" style="background-image: url(../static/4.jpg); background-size: cover;opacity: 0.5;color:black;"> <!-- 左邊欄位 -->
+        <table style = "width: 100%;height:50%">  <!-- 表格 -->
+            <tr><td style="font-size:20px"><b>相關搜尋</b></td></tr>
+            <tr><td><div class="circle">杯子蛋糕</div></td><td><div class="circle">鬆餅</div></td></tr>
+            <tr><td><div class="circle">派</div></td><td><div class="circle">馬卡龍</div></td></tr>
+            <tr><td style="font-size:20px"><b>熱門推薦</b></td></tr>
+            <tr><td><div class="circle">南瓜餅乾</div></td><td><div class="circle">奶昔</div></td></tr>
+            <tr><td><div class="circle">提拉米蘇</div></td><td><div class="circle">熔岩蛋糕</div></td></tr>
+        </table>
+     </div>
+     
+        <div class="right" style="font-size:20px;font-weight:bold"> <!-- 右邊欄位 -->
+            <form method="POST" action="/secretPage">
+                <div class="container">
+                    <div class="item" style="left: 0px;" onclick="redirectToIndex()"> <!-- 單格物件1 -->
+                        <img src="../static/10.jpg" alt="Image 1">
+                        <div class="caption">
+                            <div style="font-size:18px;">
+                                <table>
+                                    <tr><td>巧克力爆漿熔岩蛋糕&ensp;&ensp;</td><td style="text-align:right;weight:120px"><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;">&ensp;15&ensp;</div></td><td><img style="width:80px;" src="../static/18.jpg"></td></tr>
+                                </table>
+                            </div>
+                            預備食材<br>
+                             15 分鐘<br>
+                             2 人份<br>
+                            黑巧克力 60 克<br>
+                            食用油 35 克<br>
+                            雞蛋 2 個<br>
+                            糖 30 克<br>
+                            低筋麵粉 25 克<br></div>  
+                            <button style="position:absolute;button:10px;right:10px;border-radius:10px/10px;background-color:grey;border:none;color:white"> &ensp;料理步驟 &ensp;</button>         
+                    </div>
+                    
+                    <div class="item" style="left: 320px;">  <!-- 單格物件2 -->
+                        <img src="../static/9.jpg" alt="Image 2">
+                        <div class="caption">
+                            <div style="font-size:18px;">
+                                <table>
+                                    <tr><td>女巫帽杯子蛋糕&ensp;&ensp;</td><td style="text-align:right;weight:120px"><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;">&ensp;13&ensp;</div></td><td><img style="width:80px" src="../static/19.jpg"></td></tr>
+                                </table>
+                            </div>
+                            預備食材<br>
+                            沙拉油 25 g<br>
+                            低筋麵粉 40 g<br>
+                            蛋黃 2 顆<br>
+                            牛奶 35 g<br>
+                            [蛋白霜材料]<br>
+                            蛋白 2 顆<br>
+                            砂糖 30 g<br>
+                            香草精 1小滴<br>
+                            [其它]<br>
+                            鮮奶油 100 g<br>
+                            砂糖 10 g<br>
+                            巧克力餅乾及kisses巧克力 適量<br>
+                            橘色色膏 少許<br></div>
+                            <button style="position:absolute;button:10px;right:10px;border-radius:10px/10px;background-color:grey;border:none;color:white"> &ensp;料理步驟 &ensp;</button>
+                    </div>
+
+                    <div class="item" style="left: 640px;">  <!-- 單格物件3 -->
+                        <img src="../static/13.jpg" alt="Image 3">
+                        <div class="caption">
+                            <div style="font-size:18px;">
+                                <table>
+                                    <tr><td>舒芙蕾鬆餅&ensp;&ensp;</td><td style="text-align:right;weight:120px"><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;">&ensp;12&ensp;</div></td><td><img style="width:80px;" src="../static/19.jpg"></td></tr>
+                                </table>
+                            </div>
+                            預備食材<br>
+                            蛋黃(M size約1顆)20g<br>
+                            鮮奶10g<br>
+                            優格10g<br>
+                            低筋麵粉24g<br>
+                            無鋁泡打粉1g<br>
+                            香草籽半根<br>
+                            奶油(不沾鍋用的)少量<br>
+                            蛋白(M size約2顆 )72g<br>
+                            細砂糖25g</div>
+                        <button style="position:absolute;button:10px;right:10px;border-radius:10px/10px;background-color:grey;border:none;color:white"> &ensp;料理步驟 &ensp;</button>
+                    </div>
+
+                    <div class="item" style="left: 960px;"> <!-- 單格物件4 -->
+                        <img src="../static/14.jpg" alt="Image 4">
+                        <div class="caption">
+                            <div style="font-size:18px;">
+                                <table>
+                                    <tr><td>低碳焦糖布丁&ensp;&ensp;</td><td style="text-align:right;weight:120px"><div style="background-color:grey;border-radius:10px/10px;line-height:30px;color:white;">&ensp;12&ensp;</div></td><td><img style="width:80px;" src="../static/19.jpg"></td></tr>
+                                </table>
+                            </div>
+                            鮮奶150g<br>
+                            鮮奶油100g<br>
+                            阿洛酮醣30g<br>
+                            天然香草萃取5滴<br>
+                            全蛋2個<br>
+                            蛋黃2個</div>
+                        <button style="position:absolute;button:10px;right:10px;border-radius:10px/10px;background-color:grey;border:none;color:white"> &ensp;料理步驟 &ensp;</button>
+                    </div>
+
+                    <!-- 複制上列物件可在這裡繼續增加物件 -->
+
+                    <!-- 監控滑鼠滾輪實現卷軸左右橫移 -->
+                    <script>  
+                        const container = document.querySelector('.container');
+                        let isDown = false;
+                        let startX;
+                        let scrollLeft;
+                        
+                        container.addEventListener('mousedown', (e) => {
+                          isDown = true;
+                          startX = e.pageX - container.offsetLeft;
+                          scrollLeft = container.scrollLeft;
+                          container.style.cursor = 'default';
+                        });
+                        
+                        container.addEventListener('mouseleave', () => {
+                          isDown = false;
+                          container.style.cursor = 'default';
+                        });
+                        
+                        container.addEventListener('mouseup', () => {
+                          isDown = false;
+                          container.style.cursor = 'default';
+                        });
+                        
+                        container.addEventListener('mousemove', (e) => {
+                          if (!isDown) return;
+                          e.preventDefault();
+                          const x = e.pageX - container.offsetLeft;
+                          const walk = (x - startX) * 2; 
+                          container.scrollLeft = scrollLeft - walk;
+                        });
+                        
+                        container.addEventListener('wheel', (e) => {
+                          e.preventDefault();
+                          container.scrollLeft += e.deltaY;
+                        });
+                        
+                        </script>  
+                    
+                </div>
+                  
+                  
+                  
+            
+              
+        </form>
+        </div>
+        <script>
+            function redirectToIndex() {
+              var url = "page3.html";
+              window.location.replace(url);
+            }
+          </script>
 </body>
-</html>
+
+ </html>
